@@ -33,11 +33,9 @@ function getProfileData (username) {
 ```
 
 ```$xslt
-function getProfileLink (username) {
-  return 'https://github.com/' + username
-}
+
 ```
-我们可以不用组合形成 getProfileData，而是直接向其提供数据：
+我们可以不用组合形成 getProfileData，而是直接向其提供数据(function getProfileLink )：
 理论上来说，根本没有问题；这完全是正确的 JavaScript 代码。但_不是_函数组合。
 
 [getProfileLink 单个函数，在多个地方都可以使用，这样做了多件事]
