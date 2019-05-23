@@ -35,9 +35,6 @@ function getProfileData (username) {
 }
 ```
 
-```$xslt
-
-```
 我们可以不用组合形成 getProfileData，而是直接向其提供数据(function getProfileLink )：
 理论上来说，根本没有问题；这完全是正确的 JavaScript 代码。但_不是_函数组合。
 
