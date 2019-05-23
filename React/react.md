@@ -1,4 +1,13 @@
 
+
+我们总结下我们在这节课介绍的关于为何 React 很强大的知识：
+
+它的函数组合模型
+它的声明式特性
+数据从父组件流向子组件的方式
+以及 React 本质上就是 JavaScript
+
+
 ### 1-2 什么是函数组合？
 
 根据维基百科的定义，函数组合是:
@@ -148,7 +157,7 @@ React 是声明式代码，因为我们编写代码来声明我们想要什么�
 React 的数据流
 对于 React 的单向数据流，数据移动方向不一样。在 React 中，数据从父组件流向子组件。
 
-<img src="image/react_data.jpg" width="200px" height="200px" alt="">
+![数据流](image/react_data.jpg)
 
 在上图中有两个组件：
 
@@ -195,3 +204,90 @@ React 中的数据流总结
 在 React 中，数据仅朝一个方向流动，即从父组件流向子组件。
 
 如果数据在兄弟子组件之间共享，那么数据应该存储在父组件中，并同时传递给需要数据的两个子组件。
+
+### 1-5 React 就是JavaScript
+
+#### map
+
+React 的优势之一是你要用到的很多功能都使用的是普通的 JavaScript。
+
+这些函数包括 .map() 和 .filter() 方法。
+
+Array 的 .map() 方法
+
+在现有的数组上被调用，然后根据当做参数传入的函数返回的内容返回新的数组。
+
+因此 nameLengths 将为_新的_数组 [7, 4, 5]。
+
+一定要理解这一点；.map() 方法返回新的数组，它没有修改原始数组。
+
+```$xslt
+const names = ['Michael', 'Ryan', 'Tyler'];
+const nameLengths = names.map( name => name.length );
+```
+
+#### Array 的 .filter() 方法
+
+在数组上被调用
+传入函数作为参数
+返回新的数组
+
+.filter() 的函数用作检验条件，数组中只有通过检验的项目才会包含在新数组中。
+
+我们看一个示例：
+
+const names = ['Michael', 'Ryan', 'Tyler'];
+
+const shortNames = names.filter( name => name.length < 5 );
+和 .map() 一样，names 数组中的每一项都会调用传递给 .filter() 的箭头函数。
+
+第一项（即 'Michael'）存储在 name 变量中。然后进行检验，也就是进行实际的过滤操作。
+它会检查名称的长度，如果大于等于 5，那么就跳过该名称（并且不包含在新数组中！）。
+
+但是，如果名称的长度小于 5，那么 name.length < 5 返回 true 并且该名称包含在新数组中！
+
+最后，和 .map() 一样，.filter() 方法返回新的数组，而不是修改原始数组.
+
+```$xslt
+const shortNames = names.filter( name => name.length < 5 );
+```
+
+因此 shortNames 将为新数组 ['Ryan']。注意，现在它里面只有一个名称，因为 'Michael' 和 'Tyler' 都是 5 个字符或更长，被滤除了。
+
+上面只是简单地介绍了 .filter() 方法的运行原理。要深入了解该方法，请访问 MDN 上的 .filter()
+
+#### 将 .map() 和 .filter() 组合到一起
+
+.map() 和 .filter() 的如此强大之处在于它们可以组合到一起。
+
+因为两个方法都返回数组，因此我们可以将它们的方法调用链到一起，一个方法返回的数据可以是另一个方法的新数组。
+
+```$xslt
+const names = ['Michael', 'Ryan', 'Tyler'];
+
+const shortNamesLengths = names.filter( name => name.length < 5 ).map( name => name.length );
+
+```
+
+详细讲解下，names 数组被过滤，并返回新的数组，然后对该新数组调用 .map()，
+
+并再次返回新的数组！.map() 返回的新数组存储在 shortNamesLengths 中。
+
+
+首先是 .filter()！
+
+提醒下，你需要按照一定的顺序组合二者（先是 .filter()，然后是 .map()）。
+
+因为 .map() 针对数组中的每项都调用一次函数，因此如果数组已经过滤过的话，运行速度会更快。
+
+
+React 就是 JavaScript 总结
+React 是在你已经了解的 JavaScript 基础上构建而成的！你不需要学习特殊的模板库或新的执行方式。
+
+你将经常用的两个主要方法是：
+.map()
+.filter()
+
+请务必熟练使用这两个方法，请花些时间练习使用它们。
+
+不妨查看你的一些现有代码并尝试将你的 for 循环转换为 .map() 调用，或者看看是否能够使用 .filter() 删除任何 if 语句。
