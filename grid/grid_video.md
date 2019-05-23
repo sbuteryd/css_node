@@ -1,4 +1,54 @@
+### Lesson 5
 
+display: flex;  order 数字默认是0。
+
+```
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 20px;
+  grid-auto-flow: column;
+}
+```
+<img src="image/grid-auto-flow.png" width="200px" height="200px" alt="">
+
+
+grid-auto-flow: column;
+
+注意这一条，如果没有指定行的高度，rows: 100px 那么就会在一行内显示.
+<img src="image/grid-auto-flow2.png" width="200px" height="200px" alt="">
+
+column 就是说纵向显示
+
+
+| 1 | 4 |7  | 10 |
+| --- | --- | --- | --- |
+| 2 | 5 | 8 | 11 |
+|  3|6  | 9 | 12 |
+
+
+
+
+
+### Lesson 4
+
+`grid-template-columns: minmax(100px, 250px)`
+
+两个值最大和最小。相当于 （max-width min-widht）最大宽度是多少，最小的宽度是多少。
+
+`grid-auto-rows: minmax(60px, auto);`
+
+制定高度的最大和最小,auto更具内容的变化。
+
+```
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(60px, auto);
+  grid-gap: 20px;
+}
+```
 * * *
 ### lesson 3
 
