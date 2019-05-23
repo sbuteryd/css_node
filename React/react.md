@@ -102,7 +102,6 @@ for (let i = 0; i < people.length; i++) {
 ```
 
 但这是命令式代码。我们命令 JavaScript 在每一步执行什么操作。我们需要给它下达命令：
-[我要到结果给我，过程不重要]
 ### 1-2 声明式代码
 
 与命令式代码相反的是声明式代码。对于声明式代码，我们不编写所有步骤来获得最终结果。相反，我们_声明_要完成的操作，JavaScript 将帮助我们执行它。这种解释有点抽象，我们来看个示例。我们将刚刚查看的命令式 for 循环代码变得更加声明式。
@@ -114,6 +113,7 @@ const people = ['Amanda', 'Geoff', 'Michael', 'Richard', 'Ryan', 'Tyler']
 const excitedPeople = people.map(name => name + '!')
 
 ```
+[我要到结果给我，过程不重要]
 
 就是这样！注意，对于这段代码，我们没有：
 
