@@ -127,7 +127,7 @@ const excitedPeople = people.map(name => name + '!')
 ...所有这些步骤都由 JavaScript 的 .map() 数组方法来完成。
 
 
-#### 1-3  React 是声明式
+### 1-3  React 是声明式
 ```$xslt
 <button onClick={activateTeleporter}>Activate Teleporter</button>
 ```
@@ -146,7 +146,7 @@ const excitedPeople = people.map(name => name + '!')
 React 是声明式代码，因为我们编写代码来声明我们想要什么，React 负责处理声明的代码，并执行所有的 JavaScript/DOM 步骤来实现我们期望的结果。
 
 
-#### 1-4 单向数据流
+### 1-4 单向数据流
 
 React 的数据流
 对于 React 的单向数据流，数据移动方向不一样。在 React 中，数据从父组件流向子组件。
